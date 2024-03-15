@@ -1,8 +1,9 @@
 /* eslint-env node */
 module.exports = {
   root: true,
-  'extends': [
-    'plugin:vue/vue3-essential',
+  extends: [
+    'standard',
+    'plugin:vue/vue3-recommended',
     'eslint:recommended'
   ],
   overrides: [
@@ -10,7 +11,7 @@ module.exports = {
       files: [
         'e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'
       ],
-      'extends': [
+      extends: [
         'plugin:playwright/recommended'
       ]
     }

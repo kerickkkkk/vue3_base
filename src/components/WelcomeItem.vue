@@ -1,13 +1,14 @@
 <template>
   <div class="item">
     <i>
-      <slot name="icon"></slot>
+      <slot name="icon" />
     </i>
     <div class="details">
       <h3>
-        <slot name="heading"></slot>
+        <slot name="heading" />
       </h3>
-      <slot></slot>
+
+      <slot />
     </div>
   </div>
 </template>
@@ -40,7 +41,7 @@ h3 {
   color: var(--color-heading);
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .item {
     margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
@@ -57,7 +58,7 @@ h3 {
     height: 50px;
   }
 
-  .item:before {
+  .item::before {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
@@ -66,7 +67,7 @@ h3 {
     height: calc(50% - 25px);
   }
 
-  .item:after {
+  .item::after {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
@@ -75,11 +76,11 @@ h3 {
     height: calc(50% - 25px);
   }
 
-  .item:first-of-type:before {
+  .item:first-of-type::before {
     display: none;
   }
 
-  .item:last-of-type:after {
+  .item:last-of-type::after {
     display: none;
   }
 }
