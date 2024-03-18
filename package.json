@@ -3,14 +3,29 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "config": {
+    "commitizen": {
+      "path" : "cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
+    "test:once" : "vitest --run",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "lint:css": "stylelint \"**/*.{css,scss,html,vue}\" --fix  "
+    "lint:css": "stylelint \"**/*.{css,scss,html,vue}\" --fix --ignore-path .gitignore",
+    "prepare": "husky install",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,vue}": "npx eslint",
+    "src/**/*.{css,scss,html,vue}": "npx stylelint --allow-empty-input"
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -18,14 +33,21 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.0",
+    "@commitlint/config-conventional": "^19.1.0",
     "@playwright/test": "^1.42.1",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/test-utils": "^2.4.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.49.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-playwright": "^1.5.2",
     "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.0",
     "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.2",
     "postcss-html": "^1.6.0",
     "stylelint": "^16.2.1",
     "stylelint-config-idiomatic-order": "^10.0.0",
