@@ -4,7 +4,8 @@ module.exports = {
   extends: [
     'standard',
     'plugin:vue/vue3-recommended',
-    'eslint:recommended'
+    'eslint:recommended',
+    './.eslintrc-auto-import.json'
   ],
   overrides: [
     {
