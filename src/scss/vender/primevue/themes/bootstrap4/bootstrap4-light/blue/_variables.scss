@@ -1,0 +1,16 @@
+@import "bootstrap/scss/functions";
+@import "@/scss/vender/variables";
+
+$primaryLightColor: lighten($primary, 20%) !default; //rgba(38,143,255,.5) !default;
+$primaryColor: $primary !default; // #007bff !default;
+$primaryDarkColor: darken($primaryColor, 20%) !default; // #0069d9 !default;
+$primaryDarkerColor: darken($primaryColor, 40%)  !default; //#0062cc !default;
+$primaryTextColor: #ffffff !default;
+$primaryAccentBg: #cce5ff !default;
+
+
+$highlightBg: $primaryColor !default;
+$highlightTextColor: $primaryTextColor !default;
+$highlightFocusBg: darken($primaryColor, 8%) !default;
+
+@import '../_variables_light';

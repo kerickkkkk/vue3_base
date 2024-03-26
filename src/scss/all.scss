@@ -1,0 +1,31 @@
+// Custom.scss
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "./vender/variables";
+@import "./vender/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 沒有加下面這行不行
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// @import "./helpers/fullCalendar";
+
+// 修正客製化
+// @import "primevue/resources/primevue.min.css";
+
+// import primevue core style
+@import '@/scss/vender/primevue/themes/bootstrap4/bootstrap4-light/blue/theme';
+
+// @import '@/scss/vender/primevue';
+
