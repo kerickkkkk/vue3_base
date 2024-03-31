@@ -36,8 +36,7 @@
     "primevue": "^3.50.0",
     "sweetalert2": "^11.10.7",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "vue-sweetalert2": "^5.0.5"
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.0",
