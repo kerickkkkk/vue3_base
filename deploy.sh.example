@@ -3,6 +3,11 @@
 # 當發生錯誤時中止腳本
 set -e
 
+# repostory 名稱
+githubRepository=gitubRepository
+# 專案名稱
+project=projectName
+
 # 獲取當前分支名稱
 branch_name=$(git rev-parse --abbrev-ref HEAD)
 
@@ -10,8 +15,10 @@ branch_name=$(git rev-parse --abbrev-ref HEAD)
 branch_name_page="${branch_name}_page"
 
 # console
-echo "當前分支名稱是：${branch_name}"
-echo "修改後的分支名稱是：${branch_name_page}"
+echo "GitHub 倉庫：$githubRepository"
+echo "專案名稱：$project"
+echo "當前分支名稱是：$branch_name"
+echo "修改後的分支名稱是：$branch_name_page"
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
 npm run build
@@ -24,7 +31,7 @@ git add -A
 git commit -m 'deploy'
 git branch -m main "$branch_name"
 
-git push -f https://github.com/kerickkkkk/vue3_base.git "$branch_name:$branch_name_page"
+git push -f https://github.com/$githubRepository/$project.git "$branch_name:$branch_name_page"
 
 
 cd -
